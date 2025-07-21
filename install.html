@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Installation — SMKORTEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Styles globaux -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/install.css" />
+
+  </head>
+  <body>
+    <!-- Fond animé -->
+    <canvas id="cortex-bg"></canvas>
+
+    <!-- Menu verre + toggle -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="floating-menu" id="menu">
+      <h2>🧠 Navigation SMKORTEX</h2>
+      <ul>
+        <li><a href="index.html">🏠 Accueil</a></li> 
+        <li><a href="structure.html">🗂 Structure</a></li>  
+        <li><a href="scripts.html">⚙ Scripts</a></li>
+        <li><a href="rag.html">📡 Moteur RAG</a></li>  
+        <li><a href="fine.html">🎓 Fine-Tuning</a></li>    
+        <li><a href="integration.html">🔗 Intégration</a></li>
+        <li><a href="notes.html">🎓 Notes Perso</a></li>
+      </ul>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="content">
+      <h1>🔧 Installation de SMKORTEX</h1>
+      <p>Voici les composants à installer pour activer ton shell neuronal :</p>
+
+      <div class="install-block">
+        <h2>📦 Modules requis</h2>
+        <ul>
+          <li><strong>llama.cpp</strong> ➤ moteur de pensée</li>
+          <li><strong>vigogne-q4_0.gguf</strong> ➤ modèle français compressé</li>
+          <li><strong>scripts Bash</strong> ➤ orchestration terminale</li>
+          <li><strong>Fichiers `.env`</strong> ➤ config cognitive & API</li>
+        </ul>
+      </div>
+
+      <div class="install-block">
+        <h2>⚙️ Script d'installation</h2>
+        <p>Le fichier <code>scripts/install-core.sh</code> configure l’environnement :</p>
+        <pre><code>#!/bin/bash
+# Installation des dépendances
+sudo apt install build-essential cmake curl
+git clone https://github.com/ggerganov/llama.cpp
+cd llama.cpp && make
+</code></pre>
+      </div>
+
+      <div class="install-block">
+        <h2>🧬 Activation initiale</h2>
+        <p>Utilise ensuite <code>rag-engine.sh</code> pour tester le fonctionnement :</p>
+        <pre><code>bash scripts/rag-engine.sh --model models/vigogne-q4_0.gguf</code></pre>
+      </div>
+
+      <a href="index.html" class="enter-btn">⏎ Retour à l'accueil</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cortex-reactive.js"></script>
+    <script src="js/menu-toggle.js"></script>
+  </body>
+</html>

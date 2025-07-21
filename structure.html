@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Structure — SMKORTEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Styles globaux & page dédiée -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/structure.css" />
+  </head>
+  <body>
+    <!-- Fond cortex -->
+    <canvas id="cortex-bg"></canvas>
+
+    <!-- Menu verre flottant -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="floating-menu" id="menu">
+      <h2>🧠 Navigation SMKORTEX</h2>
+      <ul>
+        <li><a href="index.html">🏠 Accueil</a></li> 
+        <li><a href="install.html">🔧 Installation</a></li>
+        <li><a href="scripts.html">⚙ Scripts</a></li>
+        <li><a href="rag.html">📡 Moteur RAG</a></li>  
+        <li><a href="fine.html">🎓 Fine-Tuning</a></li>    
+        <li><a href="integration.html">🔗 Intégration</a></li>
+        <li><a href="notes.html">🎓 Notes Perso</a></li>
+      </ul>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="content">
+      <h1>🗂️ Structure du Projet SMKORTEX</h1>
+      <p>Chaque dossier est un organe du cortex terminal. Explore leur rôle :</p>
+    </div>
+
+    <!-- Blocs interactifs -->
+    <div class="structure-grid">
+      <div class="block">
+        <h3>📂 launcher/</h3>
+        <p>Interface C++ centrale — elle dirige les flux vers les modules du shell.</p>
+      </div>
+      <div class="block">
+        <h3>📂 scripts/</h3>
+        <p>Scripts Bash autonomes : moteur RAG, ambiance terminal, installation...</p>
+      </div>
+      <div class="block">
+        <h3>📂 models/</h3>
+        <p>Dossier des modèles `.gguf` pour LLaMA.cpp ➤ pensée brute.</p>
+      </div>
+      <div class="block">
+        <h3>📂 fine-tuning/</h3>
+        <p>Zone d'entraînement local (LoRA, training set, export).</p>
+      </div>
+      <div class="block">
+        <h3>📂 logs/</h3>
+        <p>Historique des sessions et requêtes RAG. Mémoire courte du shell.</p>
+      </div>
+      <div class="block">
+        <h3>📂 config/</h3>
+        <p>PIDs, cache, variables internes. Régulateur du système.</p>
+      </div>
+      <div class="block">
+        <h3>📂 integration/</h3>
+        <p>Connexion vers des entités externes (n8n, MCP, webhooks).</p>
+      </div>
+      <div class="block">
+        <h3>📄 README.md</h3>
+        <p>Documentation centrale — manifeste du terminal SMKORTEX.</p>
+      </div>
+    </div>
+
+    <!-- Scripts JS -->
+    <script src="js/cortex-reactive.js"></script>
+    <script src="js/menu-toggle.js"></script>
+  </body>
+</html>

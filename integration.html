@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Intégration — SMKORTEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Styles globaux + spécifiques -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/integration.css" />
+  </head>
+  <body>
+    <!-- Fond cortex -->
+    <canvas id="cortex-bg"></canvas>
+
+    <!-- Menu flottant -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="floating-menu" id="menu">
+      <h2>🧠 Navigation SMKORTEX</h2>
+      <ul>
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="structure.html">🗂 Structure</a></li>
+        <li><a href="install.html">🔧 Installation</a></li>
+        <li><a href="scripts.html">⚙ Scripts</a></li>
+        <li><a href="rag.html">📡 Moteur RAG</a></li>
+        <li><a href="fine.html">🎓 Fine-Tuning</a></li>
+        <li><a href="notes.html">🎓 Notes Perso</a></li>
+      </ul>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="content">
+      <h1>🔗 Intégration neuronale</h1>
+      <p>Connecte ton terminal SMKORTEX à des services externes via API, webhook et clients distants.</p>
+
+      <div class="integration-block">
+        <h2>🌐 Webhook externe</h2>
+        <p><code>integration/webhook.sh</code> ➤ envoie des requêtes vers n8n ou tout endpoint API REST.</p>
+        <pre><code>bash integration/webhook.sh --url https://n8n.mondomaine.com/webhook-smkortex</code></pre>
+      </div>
+
+      <div class="integration-block">
+        <h2>🧠 Client MCP</h2>
+        <p><code>mcp-client.sh</code> ➤ dialogue avec le Meta Cognitive Processor (ou autre shell distribué).</p>
+        <pre><code>bash integration/mcp-client.sh --message "init_sync"</code></pre>
+      </div>
+
+      <div class="integration-block">
+        <h2>⚙️ Fichier .env</h2>
+        <p>Contient les clés API, tokens d’authentification, et variables nécessaires à la connectivité.</p>
+        <pre><code>MCP_TOKEN=abcdef1234  
+N8N_ENDPOINT=https://n8n.local/webhook-smkortex</code></pre>
+      </div>
+
+      <a href="index.html" class="enter-btn">⏎ Retour à l'accueil</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/cortex-reactive.js"></script>
+    <script src="js/menu-toggle.js"></script>
+  </body>
+</html>

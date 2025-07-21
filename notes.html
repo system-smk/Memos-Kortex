@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>📝 Notes personnelles — SMKORTEX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/notes.css" />
+</head>
+<body>
+  <canvas id="cortex-bg"></canvas>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="floating-menu" id="menu">
+    <h2>🧠 Navigation SMKORTEX</h2>
+    <ul>
+      <li><a href="index.html">🏠 Accueil</a></li>
+      <li><a href="notes.html">📝 Notes</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>📝 Carnet personnel</h1>
+
+    <div class="note-block">
+      <h2>🧠 Notes personnelles :</h2>
+      <textarea id="noteInput" placeholder="Écris ici tes idées, rappels, bugs..."></textarea>
+      <button onclick="saveNote()">💾 Sauvegarder</button>
+      <button onclick="exportMemoToJSON()">📁 Exporter mes notes</button>
+      <button onclick="exportMemoToJSON('memo-bug.json')">🐞 Exporter bugs</button>
+      <button onclick="exportMemoToJSON('memo-inspirations.json')">💡 Exporter idées</button>
+      <input type="file" id="memoFileInput" accept=".json" />
+      <button onclick="importMemoFromFile()">📂 Importer un mémo</button>
+      <p id="savedStatus"></p>
+   </div>
+    
+   <div class="note-block">
+      <h2>📁 Structure SMKORTEX :</h2>
+      <img src="assets/ArchitectureKortex.png" alt="Architecture du projet SMKORTEX" style="max-width: 100%; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.2);" />
+   </div>
+
+    <div class="note-block">
+      <h2>📍 Avancement :</h2>
+      <p>Launcher en construction — `main.cpp` initialisé ✅</p>
+      <p>Pages stylisées : rag, install, scripts, integration ✅</p>
+      <p>Modules en cours : connexion MCP + export GGUF ⏳</p>
+    </div>
+
+    <div class="note-block">
+      <h2>💡 Inspirations :</h2>
+      <ul>
+        <li>Ajouter une animation de pulsation au démarrage</li>
+        <li>Exporter l’état du shell en `.json` ou `.log`</li>
+        <li>Créer une section de documentation collaborative</li>
+      </ul>
+    </div>
+
+    <div class="note-block">
+      <h2>🔍 À vérifier :</h2>
+      <ul>
+        <li>Interaction entre `rag-engine.sh` et `.env`</li>
+        <li>Comportement de fine-tuning sur corpus long</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/cortex-reactive.js"></script>
+  <script src="js/menu-toggle.js"></script>
+  <script src="js/notes-save.js"></script>
+  <script src="js/notes-export.js"></script>
+  <script src="js/notes-import.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Moteur RAG — SMKORTEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/rag.css" />
+  </head>
+  <body>
+    <!-- Fond animé -->
+    <canvas id="cortex-bg"></canvas>
+
+    <!-- Menu flottant -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="floating-menu" id="menu">
+      <h2>🧠 Navigation SMKORTEX</h2>
+      <ul>
+        <li><a href="index.html">🏠 Accueil</a></li> 
+        <li><a href="structure.html">🗂 Structure</a></li>  
+        <li><a href="install.html">🔧 Installation</a></li>
+        <li><a href="scripts.html">⚙ Scripts</a></li>
+        <li><a href="fine.html">🎓 Fine-Tuning</a></li>    
+        <li><a href="integration.html">🔗 Intégration</a></li>
+        <li><a href="notes.html">🎓 Notes Perso</a></li>
+      </ul>
+    </div>
+
+    <!-- Contenu -->
+    <div class="content">
+      <h1>📡 Moteur RAG</h1>
+      <p>Le module de récupération augmentée permet de croiser recherche de contexte + génération LLM en local.</p>
+
+      <div class="rag-section">
+        <h2>⚙️ Script : rag-engine.sh</h2>
+        <p>C’est le script principal qui lance le RAG avec ton modèle local et un index vectoriel :</p>
+        <pre><code>bash scripts/rag-engine.sh --model models/vigogne-q4_0.gguf</code></pre>
+      </div>
+
+      <div class="rag-section">
+        <h2>🧠 Fonctionnement</h2>
+        <ul>
+          <li>Recherche contextuelle dans un index (pdf, markdown, corpus local)</li>
+          <li>Envoi du prompt enrichi au modèle `.gguf` via llama.cpp</li>
+          <li>Réponse générée en temps réel</li>
+        </ul>
+      </div>
+
+      <div class="rag-section">
+        <h2>🔤 Paramètres</h2>
+        <ul>
+          <li><code>--model</code> : chemin vers le modèle LLaMA GGUF</li>
+          <li><code>--index</code> : dossier de documents vectorisés</li>
+          <li><code>--top_k</code> : nombre de passages récupérés</li>
+          <li><code>--template</code> : prompt d'encadrement (optionnel)</li>
+        </ul>
+      </div>
+
+      <a href="index.html" class="enter-btn">⏎ Retour à l'accueil</a>
+    </div>
+
+    <!-- Scripts JS -->
+    <script src="js/cortex-reactive.js"></script>
+    <script src="js/menu-toggle.js"></script>
+  </body>
+</html>

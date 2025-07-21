@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Scripts Bash — SMKORTEX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/scripts.css" />
+
+  </head>
+  <body>
+    <canvas id="cortex-bg"></canvas>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="floating-menu" id="menu">
+      <h2>🧠 Navigation SMKORTEX</h2>
+      <ul>
+        <li><a href="index.html">🏠 Accueil</a></li> 
+        <li><a href="structure.html">🗂 Structure</a></li>  
+        <li><a href="install.html">🔧 Installation</a></li>
+        <li><a href="rag.html">📡 Moteur RAG</a></li>  
+        <li><a href="fine.html">🎓 Fine-Tuning</a></li>    
+        <li><a href="integration.html">🔗 Intégration</a></li>
+        <li><a href="notes.html">🎓 Notes Perso</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <h1>⚙️ Scripts Bash</h1>
+      <p>Voici les modules qui orchestrent ton terminal SMKORTEX :</p>
+    </div>
+
+    <div class="scripts-grid">
+      <div class="script-block">
+        <h3>🔧 install-core.sh</h3>
+        <p>Installe toutes les dépendances nécessaires : `build-essential`, `cmake`, `curl`, `llama.cpp`, etc.</p>
+        <pre><code>bash scripts/install-core.sh</code></pre>
+      </div>
+
+      <div class="script-block">
+        <h3>🌀 ambienceur.sh</h3>
+        <p>Active un fond CMATRIX visuel dans le terminal — pure ambiance cognitive.</p>
+        <pre><code>bash scripts/ambienceur.sh</code></pre>
+      </div>
+
+      <div class="script-block">
+        <h3>🧘 ambienceur-stop.sh</h3>
+        <p>Arrête le processus CMATRIX en douceur et nettoie l’environnement.</p>
+        <pre><code>bash scripts/ambienceur-stop.sh</code></pre>
+      </div>
+
+      <div class="script-block">
+        <h3>📡 rag-engine.sh</h3>
+        <p>Lance le moteur RAG local avec ton modèle `.gguf` et ton corpus indexé.</p>
+        <pre><code>bash scripts/rag-engine.sh --model models/vigogne-q4_0.gguf</code></pre>
+      </div>
+
+      <a href="index.html" class="enter-btn">⏎ Retour à l'accueil</a>
+    </div>
+
+    <script src="js/cortex-reactive.js"></script>
+    <script src="js/menu-toggle.js"></script>
+  </body>
+</html>

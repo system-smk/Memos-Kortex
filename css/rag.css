@@ -1,0 +1,95 @@
+/* === RAG : Modules fluides & translucides === */
+.rag-section {
+  position: relative;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 1.6em;
+  margin: 4em auto;
+  max-width: 800px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 0 14px rgba(0,179,255,0.15);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.rag-section:hover {
+  background: rgba(0,179,255,0.08);
+  border-color: #00b3ff;
+  box-shadow: 0 0 18px #00b3ff66;
+}
+
+/* === Pouls liquide latéral === */
+.rag-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 2px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00b3ffaa, transparent);
+  border-radius: 2px;
+  animation: waterPulse 3s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes waterPulse {
+  0%   { opacity: 0.2; transform: scaleY(0.9); }
+  50%  { opacity: 1;   transform: scaleY(1); }
+  100% { opacity: 0.2; transform: scaleY(0.9); }
+}
+
+/* === Titres bleus célestes === */
+.rag-section h2 {
+  color: #00b3ff;
+  font-size: 1.4em;
+  margin-bottom: 0.6em;
+  text-shadow: 0 0 6px #00b3ff88;
+}
+
+/* === Texte fluide === */
+.rag-section p {
+  color: #cceeff;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.rag-section ul {
+  padding-left: 1.2em;
+}
+
+.rag-section li {
+  color: #eefcff;
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
+
+/* === Zone terminale === */
+.rag-section pre {
+  background: rgba(255,255,255,0.06);
+  padding: 0.9em 1.2em;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-family: 'Fira Code', monospace;
+  color: #00b3ff;
+  overflow-x: auto;
+  box-shadow: inset 0 0 6px rgba(0,179,255,0.25);
+}
+
+/* === Responsive mobile === */
+@media screen and (max-width: 768px) {
+  .rag-section {
+    margin: 3em 6vw;
+    padding: 1.3em;
+  }
+
+  .rag-section h2 {
+    font-size: 1.2em;
+  }
+
+  .rag-section p,
+  .rag-section li,
+  .rag-section pre {
+    font-size: 0.9em;
+  }
+}

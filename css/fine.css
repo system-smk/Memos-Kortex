@@ -1,0 +1,95 @@
+/* === FINE-TUNING : Cartouches neuronales === */
+.fine-block {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5em;
+  margin: 4em auto;
+  max-width: 800px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0,234,255,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fine-block:hover {
+  background: rgba(0,234,255,0.08);
+  border-color: #00eaff;
+  box-shadow: 0 0 15px #00eaff66;
+}
+
+/* === Pouls latéral synaptique (optionnel) === */
+.fine-block::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 6px;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00eaffaa, transparent);
+  border-radius: 5px;
+  animation: flow 2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes flow {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+/* === Titres === */
+.fine-block h2 {
+  color: #00eaff;
+  font-size: 1.4em;
+  margin-bottom: 0.6em;
+  text-shadow: 0 0 5px #00eaff88;
+}
+
+/* === Texte & listes === */
+.fine-block p {
+  color: #ccc;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.fine-block ul {
+  padding-left: 1.2em;
+}
+
+.fine-block li {
+  color: #eee;
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
+
+/* === Code & terminal === */
+.fine-block pre {
+  background: rgba(255,255,255,0.06);
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  font-size: 0.85em;
+  font-family: 'Fira Code', monospace;
+  color: #00eaff;
+  overflow-x: auto;
+}
+
+/* === Responsive mobile === */
+@media screen and (max-width: 768px) {
+  .fine-block {
+    margin: 3em 6vw;
+    padding: 1.2em;
+  }
+
+  .fine-block h2 {
+    font-size: 1.2em;
+  }
+
+  .fine-block p,
+  .fine-block li {
+    font-size: 0.95em;
+  }
+
+  .fine-block pre {
+    font-size: 0.8em;
+  }
+}

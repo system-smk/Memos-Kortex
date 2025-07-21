@@ -1,0 +1,77 @@
+/* === INSTALLATION : Cartouches techniques === */
+.install-block {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5em;
+  margin: 4em auto;
+  max-width: 800px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px rgba(0,234,255,0.1);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.install-block:hover {
+  background: rgba(0,234,255,0.08);
+  border-color: #00eaff;
+  box-shadow: 0 0 15px #00eaff66;
+}
+
+/* === Titres === */
+.install-block h2 {
+  color: #00eaff;
+  font-size: 1.4em;
+  margin-bottom: 0.6em;
+  text-shadow: 0 0 5px #00eaff88;
+}
+
+/* === Paragraphes & listes === */
+.install-block p {
+  color: #ccc;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.install-block ul {
+  padding-left: 1.2em;
+}
+
+.install-block li {
+  color: #eee;
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
+
+/* === Zone terminale === */
+.install-block pre {
+  background: rgba(255,255,255,0.06);
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  font-size: 0.85em;
+  font-family: 'Fira Code', monospace;
+  color: #00eaff;
+  overflow-x: auto;
+}
+
+/* === Responsive mobile === */
+@media screen and (max-width: 768px) {
+  .install-block {
+    margin: 3em 6vw;
+    padding: 1.2em;
+  }
+
+  .install-block h2 {
+    font-size: 1.2em;
+  }
+
+  .install-block p,
+  .install-block li {
+    font-size: 0.95em;
+  }
+
+  .install-block pre {
+    font-size: 0.8em;
+  }
+}

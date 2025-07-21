@@ -1,0 +1,59 @@
+/* === GRILLE DES BLOCS STRUCTURE === */
+.structure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 5vh 5vw;
+  z-index: 1;
+  position: relative;
+}
+
+/* === Bloc individuel : effet verre + hover === */
+.block {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.2em;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.block:hover {
+  background: rgba(0,234,255,0.1);
+  border-color: #00eaff;
+  box-shadow: 0 0 10px #00eaff44;
+  transform: scale(1.02);
+}
+
+/* === Titres et paragraphes des blocs === */
+.block h3 {
+  color: #00eaff;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+}
+
+.block p {
+  color: #ccc;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* === Responsive pour petits écrans === */
+@media screen and (max-width: 768px) {
+  .structure-grid {
+    grid-template-columns: 1fr;
+    padding: 3vh 6vw;
+  }
+
+  .block {
+    font-size: 1em;
+  }
+
+  .block h3 {
+    font-size: 1.1em;
+  }
+
+  .block p {
+    font-size: 0.95em;
+  }
+}

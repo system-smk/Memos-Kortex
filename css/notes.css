@@ -1,0 +1,153 @@
+/* === Bloc mémoire flottante === */
+
+
+.note-block {
+  position: relative;
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.02);
+  border-radius: 14px;
+  padding: 2.5em 2em;
+  margin: 4em auto;
+  max-width: 800px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 0 12px rgba(0,179,255,0.12);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.note-block:hover {
+  background: rgba(0,179,255,0.02);
+  border-color: #00b3ff;
+  box-shadow: 0 0 18px #00b3ff55;
+}
+
+/* === Rayon latéral pulsé === */
+.note-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 15px;
+  height: 100%;
+  background: linear-gradient(transparent, #00b3ff 0%, #87ceeb 25%, #40e0d0 50%, #00b3f0 70%, transparent);
+  
+  animation: memoPulse 15s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes memoPulse {
+  0%   { transform: translateY(-100%); opacity: 0.4; }
+  50%  { transform: translateY(0%);  opacity: 0.8; }
+  100% { transform: translateY(-100%);   opacity: 0.4; }
+}
+
+/* === Titres neuronaux === */
+.note-block h2 {
+  color: #00b3ff;
+  font-size: 1.35em;
+  margin-bottom: 0.7em;
+  text-shadow: 0 0 5px #00b3ff88;
+}
+
+/* === Paragraphes & listes === */
+.note-block p {
+  color: #cceeff;
+  font-size: 1em;
+  line-height: 1.6;
+}
+
+.note-block ul {
+  padding-left: 1.2em;
+  margin-top: -0.3em;
+}
+
+.note-block li {
+  color: #eefcff;
+  font-size: 0.95em;
+  margin-bottom: 0.6em;
+}
+
+/* === Zone de saisie neuronale === */
+textarea#noteInput {
+  display: block;
+  width: calc(100% - 4px);
+  height: 180px;
+  font-size: 1em;
+  font-family: 'Fira Code', monospace;
+  color: #00b3ff;
+  background: rgba(255,255,255,0.04);
+  border: 2px solid #00b3ff33;
+  border-radius: 10px;
+  padding: 1em;
+  box-sizing: border-box;
+  backdrop-filter: blur(6px);
+  resize: vertical;
+  margin-bottom: 1em;
+  overflow: auto;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+textarea#noteInput:focus {
+  border-color: #00b3ff;
+  box-shadow: 0 0 10px #00b3ff88;
+  outline: none;
+}
+
+/* === Boutons flottants === */
+button {
+  background: #00b3ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-right: 0.8em;
+  margin-bottom: 0.6em;
+}
+
+button:hover {
+  background: #0098dd;
+  transform: scale(1.03);
+}
+
+/* === Import fichier === */
+input[type="file"]#memoFileInput {
+  display: block;
+  margin-top: 0.8em;
+  margin-bottom: 0.6em;
+  color: #00b3ff;
+  font-size: 0.95em;
+  background: transparent;
+  border: none;
+}
+
+/* === Statut de sauvegarde === */
+#savedStatus {
+  color: #cceeff;
+  font-size: 0.95em;
+  margin-top: 0.5em;
+}
+
+/* === Responsive terminal mobile === */
+@media screen and (max-width: 768px) {
+  .note-block {
+    margin: 3em 6vw;
+    padding: 1.6em;
+  }
+
+  .note-block h2 {
+    font-size: 1.2em;
+  }
+
+  textarea#noteInput {
+    height: 160px;
+    font-size: 0.95em;
+  }
+
+  button {
+    font-size: 0.95em;
+    padding: 0.5em 1em;
+  }
+}
