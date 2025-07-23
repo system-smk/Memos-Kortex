@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>📘 README — SMKORTEX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/readme.css" />
+</head>
+<body>
+  <canvas id="cortex-bg"></canvas>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="floating-menu" id="menu">
+    <h2>🧠 Navigation SMKORTEX</h2>
+    <ul>
+        <li><a href="index.html">🗂 Structure</a></li>
+        <li><a href="structure.html">🗂 Structure</a></li>
+        <li><a href="install.html">🔧 Installation</a></li>
+        <li><a href="scripts.html">🌀 Scripts Bash</a></li>
+        <li><a href="rag.html">📡 Moteur RAG</a></li>
+        <li><a href="fine.html">🎓 Fine-Tuning</a></li>
+        <li><a href="integration.html">🔗 Intégration</a></li>
+        <li><a href="notes.html">🎓 Notes Perso</a></li>
+        <li><a href="readme.html">📘 README</a></li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h1>📘 Documentation technique — SMKORTEX</h1>
+
+    <div class="note-block">
+      <h2>📁 Structure du projet :</h2>
+      <pre><code>
+
+smkortex/
+│
+├── CMakeLists.txt                # Fichier CMake (compilation C++)
+│
+├── build/                        # Dossier de compilation généré par CMake
+│   ├── CMakeCache.txt            # Cache CMake (options et chemins)
+│   ├── cmake_install.cmake       # Script interne CMake (installation)
+│   ├── kortex_terminal           # Exécutable final du terminal SMKORTEX
+│   ├── Makefile                  # Script make généré par CMake
+│   └── CMakeFiles/               # Fichiers intermédiaires de build
+│
+├── src/                          # Dossier source C++ principal
+│   ├── main.cpp                  # Point d’entrée du terminal (lance le menu)
+│   ├── menu.cpp / menu.hpp       # Interface utilisateur + menu interactif (Boost.Process)
+│   └── dependances_kortex.cpp /
+│       dependances_kortex.hpp    # Modules IA (llama.cpp, vigogne...)
+│
+├── scripts/                      # Scripts spécifiques aux IA (hors outils système)
+│   ├── llamacpp_install.sh       # Installe llama.cpp + modèle GGUF
+│   └── vigogne_install.sh        # Installe Vigogne + dépendances HuggingFace
+│
+└── install/                      # Scripts d’installation des outils système
+    ├── boostProc_install.sh      # Boost.Process (librairie C++ pour subprocess)
+    ├── buildtools_install.sh     # g++, make, build-essential
+    ├── cmake_install.sh          # CMake
+    ├── curl_install.sh           # Curl (HTTP terminal / réseau)
+    ├── git_install.sh            # Git (clone de dépôts)
+    ├── jsonlib_install.sh        # nlohmann-json pour le support JSON C++
+    ├── protobuf_install.sh       # Protocol Buffers (format GGUF / neuronales)
+    ├── sentencepiece_install.sh  # SentencePiece (tokenizer pour GGUF/T5/BERT)
+    └── tools_base_install.sh     # lance tous les scripts install/*.sh
+
+
+      </code></pre>
+    </div>
+
+    <div class="note-block">
+      <h2>🔧 Rôles des fichiers C++ :</h2>
+      <ul>
+        <li><b>main.cpp</b> — Point d’entrée du terminal SMKORTEX</li>
+        <li><b>menu.cpp / menu.hpp</b> — Interface utilisateur + exécution via Boost.Process</li>
+        <li><b>dependances_kortex.cpp</b> — Installation IA (llama.cpp, vigogne...)</li>
+      </ul>
+    </div>
+
+    <div class="note-block">
+      <h2>📦 Scripts d'installation (install/)</h2>
+      <ul>
+        <li><b>tools_base_install.sh</b> — Installe tous les outils système</li>
+        <li><b>git_install.sh</b>, <b>curl_install.sh</b>, etc. — Scripts modulaires</li>
+        <li>Chaque script vérifie & installe via <code>dpkg</code> + <code>apt</code></li>
+      </ul>
+    </div>
+
+    <div class="note-block">
+      <h2>⚙️ Compilation & lancement :</h2>
+      <pre><code>
+mkdir build && cd build
+cmake ..
+make
+./smkortex_terminal
+      </code></pre>
+    </div>
+  </div>
+
+  <script src="js/menu-toggle.js"></script>
+  <script src="js/cortex-reactive.js"></script>
+</body>
+</html>
