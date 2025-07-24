@@ -67,7 +67,24 @@ smkortex/
 
       </code></pre>
     </div>
+    
+    <div class="note-block">
+      <h2>🧠 Utilisation de filesystem & boost::process</h2>
+      <p>
+        Dans le cadre d’un développement C++ moderne, l’utilisation de <code>std::filesystem</code> et <code>boost::process</code> permet de remplacer efficacement les appels classiques à <code>system()</code> et les fonctions C de la bibliothèque standard (<code>cstdlib</code>).
+      </p>
+      <p>
+        <code>std::filesystem</code> offre une interface native pour manipuler les répertoires et les fichiers de manière sûre et portable, tandis que <code>boost::process</code> permet d’exécuter des processus externes avec une gestion fine des arguments, des flux et du contrôle de retour.
+      </p>
+      <p>
+        Contrairement à <code>system()</code>, ces outils garantissent une meilleure sécurité, une plus grande flexibilité, et une intégration plus naturelle dans l’architecture modulaire d’un projet.
+      </p>
+      <p>
+        Ensemble, ils constituent une base robuste pour piloter des scripts, lancer des modèles IA ou gérer le terminal SMKORTEX avec élégance et précision.
+      </p>
+    </div>
 
+    
     <div class="note-block">
       <h2>🔧 Rôles des fichiers C++ :</h2>
       <ul>
